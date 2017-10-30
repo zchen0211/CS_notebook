@@ -1,0 +1,27 @@
+# Congestion Control
+# http://www.geeksforgeeks.org/computer-networks-congestion-control/
+
+Effects of Congestion
+ As delay increases, performance decreases.
+ If delay increases, retransmission occurs, making situation worse.
+
+Congestion control algorithms
+ Leaky Bucket Algorithm
+
+Steps:
+ 1. When host wants to send packet, packet is thrown into the bucket.
+ 2. The bucket leaks at a constant rate, meaning the network interface transmits packets at a constant rate.
+ 3. Bursty traffic is converted to a uniform traffic by the leaky bucket.
+ 4. In practice the bucket is a finite queue that outputs at a finite rate.
+
+Token bucket Algorithm
+ In order to deal with the bursty traffic we need a flexible algorithm so that the data is not lost. One such algorithm is token bucket algorithm.
+
+Steps:
+ 1. In regular intervals tokens are thrown into the bucket.
+ 2.The bucket has a maximum capacity.
+ 3. If there is a ready packet, a token is removed from the bucket, and the packet is send.
+ 4. If there is no token in the bucket, the packet cannot be send.
+
+# Leaky Bucket Algorithm
+# http://www.geeksforgeeks.org/leaky-bucket-algorithm/

@@ -101,6 +101,25 @@ Subnetting:
 
 # Longest Prefix Matching in Routers
 # http://www.geeksforgeeks.org/computer-networks-longest-prefix-matching-in-routers/
+IP prefix is a prefix of IP address. All computers on one network have same IP prefix. For example, in 192.24.0.0/18, 18 is length of prefix and prefix is first 18 bits of the address.
 
+# Traceroute
+# http://www.geeksforgeeks.org/computer-networks-traceroute/
+traceroute google.com
 
+# How does traceroute make sure that a packet is dropped at i’th hop?
+It uses TTL field for this purpose. TTL is set as 1 for first packet(s), then 2 and so on until destination is reached.
 
+# How is total time estimated?
+When a packet is dropped, the router sends an ICMP Time Exceeded message back to the source. That is how source figures out total time.
+
+# What’s difference between Ping and Traceroute?
+# http://www.geeksforgeeks.org/whats-difference-between-ping-and-traceroute/
+Ping -
+ It is a utility that helps one to check if a particular IP address is accessible or not. Ping works by sending a packet to the specified address and waits for the reply. It also measures round trip time and reports errors.
+ Ping is also used in checking if the computers on a local network are active. For this, the user has to go in command prompt and type : ping 127.0.0.1, and if the address is active, the ping would return a message like this :
+
+Traceroute -
+ It is utility  that traces a packet from your computer to the host, and will also show the number of steps (hops) required to reach there, along with the time by each step. Traceroute works by sending the packets of data with low survival time (Time to Live – TTL) which specifies how many steps (hops) can the packet survive before it is returned.
+
+The main difference between Ping and Traceroute is that Ping is a quick and easy utility to tell if the specified server is reachable and how long will it take to send and receive data from the server whereas Traceroute finds the exact route taken to reach the server and time taken by each step (hop).
