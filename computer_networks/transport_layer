@@ -25,3 +25,9 @@ Steps:
 
 # Leaky Bucket Algorithm
 # http://www.geeksforgeeks.org/leaky-bucket-algorithm/
+ FIFO queue
+
+The following is an algorithm for variable-length packets:
+ 1. Initialize a counter to n at the tick of the clock.
+ 2. If n is greater than the size of the packet, send the packet and decrement the counter by the packet size. Repeat this step until n is smaller than the packet size.
+ 3. Reset the counter and go to step 1.

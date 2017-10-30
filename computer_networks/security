@@ -1,0 +1,67 @@
+# RSA Algorithm in Cryptography
+# http://www.geeksforgeeks.org/rsa-algorithm-cryptography/
+ RSA algorithm is asymmetric cryptography algorithm.
+ two different keys i.e. Public Key and Private Key.
+
+Since this is asymmetric, nobody else except browser can decrypt the data even if a third party has public key of browser.
+
+e.g.
+Public Key:
+ P = 53, Q = 59
+ n = P * Q = 3,127
+ choose small e, s.t. 1 < e < phi(n), let's say e = 3
+ public key: 3,127, 3
+Private Key:
+ phi(n) = (P-1)(Q-1) = 3,016
+ d = (k * phi(n) + 1) / e for some integer k
+ choose k = 2 -> d = 2,011
+ private key: 2,011
+
+Encode 89:
+ Encrypt: c = 89 ^ e mod n = 1,394
+ Decrypt: data = c ^ 2,011 mod n = 89
+
+# Deniel of Service and Prevention
+# http://www.geeksforgeeks.org/deniel-service-prevention/
+ For example, if a bank website can handle 10 people a second clicking the Login button, an attacker only has to send 10 fake requests per second to make it so no legitimate users can login.
+
+Other basic types of DoS attacks involve:
+ 1. Flooding a network with useless activity so that genuine traffic cannot get through. The TCP/IP SYN and smurf attacks are two common examples.
+ 2. Remotely overloading a system’s CPU so that valid requests cannot be processed.
+ 3. Changing permissions or breaking authorization logic to prevent users from logging into a system. One common example involves triggering a rapid series of false login attempts that lock out accounts from being able to log in.
+ 4. Deleting or interfering with specific critical applications or services to prevent their normal operation (even if the system and network overall are functional).
+
+DoS attacks can cause the following problems:
+ Ineffective services
+ Inaccessible services
+ Interruption of network traffic
+ Connection interference
+
+# Simple Mail Transfer Protocol (SMTP)
+# http://www.geeksforgeeks.org/simple-mail-transfer-protocol-smtp/
+ SMTP is a push protocol and is used to send the mail
+ whereas POP (post office protocol) or IMAP (internet message access protocol) are used to retrieve those mails at the receiver’s side.
+
+# SMTP Fundamentals
+ SMTP is an application layer protocol. The client who wants to send the mail opens a TCP connection to the SMTP server and then sends the mail across the connection. The SMTP server is always on listening mode. As soon as it listens for a TCP connection from any client, the SMTP process initiates a connection on that port (25). After successfully establishing the TCP connection the client process sends the mail instantly.
+
+# SMTP Protocol
+The SMTP model is of two type:
+ 1. End-to- end method
+ 2. Store-and- forward method
+
+# Communication between sender and the receiver :
+ SENDING EMAIL
+ RECEIVING EMAIL
+
+# DNS
+# http://www.geeksforgeeks.org/dns-domain-name-server/
+
+# Why does DNS use UDP and not TCP?
+# http://www.geeksforgeeks.org/why-does-dns-use-udp-and-not-tcp/
+DNS is an application layer protocol. All application layer protocols use one of the two transport layer protocols, UDP and TCP. TCP is reliable and UDP is not reliable. DNS is supposed to be reliable, but it uses UDP, why?
+
+There are following interesting facts about TCP and UDP on transport layer that justify the above.
+ 1) UDP is much faster. TCP is slow as it requires 3 way handshake. The load on DNS servers is also an important factor. DNS servers (since they use UDP) don’t have keep connections.
+ 2) DNS requests are generally very small and fit well within UDP segments.
+ 3) UDP is not reliable, but reliability can added on application layer. An application can use UDP and can be reliable by using timeout and resend at application layer.

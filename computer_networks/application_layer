@@ -1,0 +1,51 @@
+# DNS
+# http://www.geeksforgeeks.org/dns-domain-name-server/
+ DNS is a host name to IP address translation service.
+
+# Domain:
+ 1. Generic domain : .com(commercial) .edu(educational) .mil(military) .org(non profit organization) .net(similar to commercial) all these are generic domain.
+ 2. Country domain .in (india) .us .uk
+ 3. Inverse domain if we want to know what is the domain name of the website. Ip to domain name mapping.So DNS can provide both the mapping for example to find the ip addresses of geeksforgeeks.org then we have to type nslookup www.geeksforgeeks.org.
+
+Hierarchy of Name Servers
+ Root name servers
+ Top level server
+ Authoritative name servers
+
+# How DHCP server dynamically assigns IP address to a host?
+# http://www.geeksforgeeks.org/how-dhcp-server-dynamically-assigns-ip-address-to-a-host/
+ DHCP is an abbreviation for Dynamic Host Configuration Protocol.
+ It is an application layer protocol used by hosts for obtaining network setup information.
+ The DHCP is controlled by DHCP server that dynamically distributes network configuration parameters such as IP addresses, subnet mask and gateway address.
+
+# Configuring a host using DHCP
+ Lease IP address
+ Subnet Mask
+ Gateway address
+
+ 1. DHCPDISCOVER
+ 2. DHCPOFFER
+ 3. DHCPREQUEST
+ 4. DHCPACK
+ 5. DHCPRELEASE
+
+# What’s difference between http:// and https:// ?
+# http://www.geeksforgeeks.org/whats-difference-http-https/
+ Think of 'Online shopping' at Amazon or Flipkart. You might have noticed that as soon as we click on the Check-out on these online shopping portals, the address bar gets changed to use https.
+ In fact, cryptographic protocols such as SSL and/or TLS turn http into https i.e. https = http + cryptographic protocols.
+ Also, another syntactic difference between http and htpps is that http uses default port 80 while https uses default port 443.
+
+# What’s difference between HTML and HTTP ?
+# http://www.geeksforgeeks.org/whats-difference-html-http/
+ HTML is a Language while HTTP is a Protocol.
+ HTML (Hypertext Markup Language)
+ HTML tags (e.g. “<head>”, “<body>” etc.) are used to tag or mark normal text
+
+ HTTP (Hypertext Transfer Protocol) is a protocol for transferring the hypertext pages from Web Server to Web Browser.
+ For exchanging web pages between Server and Browser, an HTTP session is setup using protocol methods (e.g. GET, POST etc.).
+
+# What’s difference between The Internet and The Web ?
+# http://www.geeksforgeeks.org/whats-difference-internet-web/
+ The Internet is a global network of networks while the Web, also referred formally as World Wide Web (www) is collection of information which is accessed via the Internet.
+ The Internet is infrastructure while the Web is service on top of that infrastructure.
+ At a high level, we can even think of the Internet as hardware and the Web as software!
