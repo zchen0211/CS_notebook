@@ -1,0 +1,106 @@
+# Internet Control Message Protocol (ICMP)
+# http://www.geeksforgeeks.org/internet-control-message-protocol-icmp/
+Since IP does not have a inbuilt mechanism for sending error and control messages. It depends on Internet Control Message Protocol(ICMP) to provide an error control. It is used for reporting errors and management queries. It is a supporting protocol and used by networks devices like routers for sending the error messages and operations information.
+
+# Source quench message:
+Source quench message is request to decrease traffic rate for messages sending to the host(destination). Or we can say, when receiving host detects that rate of sending packets (traffic rate) to it is too fast it sends the source quench message to the source to slow the pace down so that no packet can be lost.
+
+ICMP will take source IP from the discarded packet and informs to source by sending source quench message.
+
+Then source will reduce the speed of transmission so that router will free for congestion.
+
+When the congestion router is far away from the source the ICMP will send hop by hop source quench message so that every router will reduce the speed of transmission.
+
+# Parameter problem:
+Whenever packets come to the router then calculated header checksum should be equal to recieved header checksum then only packet is accepted by the router.
+
+If there is mismatch packet will be dropped by the router.
+
+ICMP will take the source IP from the discarded packet and informs to source by sending parameter problem message.
+
+# Time exceeded message :
+When some fragments are lost in a network then the holding fragment by the router will be droped then ICMP will take source IP from discarded packet and informs to the source, of discarded datagram due to time to live field reaches to zero, by sending time exceeded message.
+
+# Destination un-reachable:
+
+# Redirection message:
+
+# Introduction and IPv4 Datagram Header
+# http://www.geeksforgeeks.org/network-layer-introduction-ipv4/
+# Responsibilities of Network Layer:
+ 1. Packet forwarding/Routing of packets:
+ 2. Connectionless communication(IP):
+ 3. Fragmentation of data packets:
+
+# Circuit Switch vs Packet Switch
+
+# IPv4:
+IPv4 is a connectionless protocol used for packet switched networks. It operates on best effort delivery model, in which neither delivery is guaranteed, nor proper sequencing or avoidance of duplicate delivery is assured.
+
+IPv4 Datagram Header: Header + Data
+Header (20 - to bytes):
+ VER:   Version of the IP protocol (4 bits), which is 4 for IPv4
+ HLEN:  IP header length (4 bits), which is the number of 32 bit 
+       words in the header. Minimum value for this field is 5
+       and the maximum is 15
+ Type of service: Low Delay, High Throughput, Reliability (8 bits)
+ Total Length:    Length of header + Data (16 bits), which has a 
+                 minimum value 20 bytes and maximum is 65,535 bytes
+ Identification:  Unique Packet Id for identifying the group of 
+                 fragments of a single IP datagram (16 bits)
+ Flags:           3 flags of 1 bit each : reserved bit (must be zero),
+                 do not fragment flag, more fragments flag (same order)
+ Fragment Offset: Specified in terms of number of 8 bytes, which has 
+                 the maximum value of 65,528 bytes
+ Time to live:  Datagram’s lifetime (8 bits), It prevents the datagram 
+               to loop in the network
+ Protocol:     Name of the protocol to which the data is to be passed 
+              (8 bits)
+ Header Checksum:  16 bits header checksum for checking errors in the 
+                  datagram header
+ Source IP address: 32 bits IP address of the sender
+ Destination IP address: 32 bits IP address of the receiver
+ Option: Optional information such as source route
+
+# IP Addressing: Classful
+# http://www.geeksforgeeks.org/ip-addressing-introduction-and-classful-addressing/
+IP address is an address having information about how to reach a specific host, especially outside the LAN. An IP address is a 32 bit unique address having an address space of 2^32. 
+
+# Classful Addressing:
+Class A (IP address belonging to class A are assigned to the networks that contain a large number of hosts.):
+ The network ID is 8 bits long.
+ The host ID is 24 bits long.
+ 0.0.0.0 -> 127.255.255.255
+Class B (IP address belonging to class B are assigned to the networks that ranges from medium-sized to large-sized networks.):
+ The network ID is 16 bits long.
+ The host ID is 16 bits long.
+ 128.0.0.0 -> 191.255.255.255
+Class C (IP address belonging to class C are assigned to small-sized networks.):
+ The network ID is 24 bits long.
+ The host ID is 8 bits long.
+ 192.0.0.0 -> 223.255.255.255
+Class D (IP address belonging to class D are reserved for multi-casting.):
+ 224.0.0.0 -> 239.255.255.255
+Class E (IP addresses belonging to class E are reserved for experimental and research purposes.):
+ 240.0.0.0 -> 255.255.255.255
+
+# Range of special IP addresses:
+ 169.254.0.0 – 169.254.0.16 : Link local addresses
+ 127.0.0.0 – 127.0.0.8 : Loop-back addresses
+ 0.0.0.0 – 0.0.0.8 : used to communicate within the current network.
+
+# IP Addressing: Classless Addressing
+# http://www.geeksforgeeks.org/ip-addressing-classless-addressing/
+# Network Address and Mask
+The default mask in different classes are :
+ Class A – 255.0.0.0
+ Class B – 255.255.0.0
+ Class C – 255.255.255.0
+
+Subnetting:
+
+# Longest Prefix Matching in Routers
+# http://www.geeksforgeeks.org/computer-networks-longest-prefix-matching-in-routers/
+
+
+

@@ -1,0 +1,196 @@
+# http://www.geeksforgeeks.org/computer-network-tutorials/
+
+# Network Topologies
+# http://www.geeksforgeeks.org/network-topologies-computer-networks/
+a) Mesh Topology :
+In mesh topology, every device is connected to another device via particular channel.
+
+If suppose, N number of devices are connected with each other in mesh topology, then total number of ports that is required by each device is N-1. In the Figure 1, there are 5 devices connected to each other, hence total number of ports required is 4.
+If suppose, N number of devices are connected with each other in mesh topology, then total number of dedicated links required to connect them is C(N,2) i.e. N(N-1)/2. In the Figure 1, there are 5 devices connected to each other, hence total number of links required is 5*4/2 = 10.
+
+# Advantages of this topology :
+It is robust.
+Fault is diagnosed easily. Data is reliable because data is transferred among the devices through dedicated channels or links.
+Provides security and privacy.
+
+# Problems with this topology :
+Installation and configuration is difficult.
+Cost of cables are high as bulk wiring is required, hence suitable for less number of devices.
+Cost of maintenance is high.
+
+b) Star Topology :
+In star topology, all the devices are connected to a single hub through a cable. This hub is the central node and all others nodes are connected to the central node. The hub can be passive in nature i.e. not intelligent hub such as broadcasting devices, at the same time the hub can be intelligent known as active hubs. Active hubs have repeaters in them.
+
+# Advantages of this topology :
+If N devices are connected to each other in star topology, then the number of cables required to connect them is N. So, it is easy to set up.
+Each device require only 1 port i.e. to connect to the hub.
+
+# Problems with this topology :
+If the concentrator (hub) on which the whole topology relies fails, the whole system will crash down.
+Cost of installation is high.
+Performance is based on the single concentrator i.e. hub.
+
+c) Bus Topology :
+
+Bus topology is a network type in which every computer and network device is connected to single cable. It transmits the data from one end to another in single direction. No bi-directional feature is in bus topology.
+
+# Advantages of this topology :
+If N devices are connected to each other in bus topology, then the number of cables required to connect them is 1 which is known as backbone cable and N drop lines are required.
+Cost of the cable is less as compared to other topology, but it is used to built small networks.
+
+# Problems with this topology :
+If the common cable fails, then the whole system will crash down.
+If the network traffic is heavy, it increases collisions in the network. To avoid this, various protocols are used in MAC layer known as Pure Aloha, Slotted Aloha, CSMA/CD etc.
+
+d) Ring Topology :
+In this topology, it forms a ring connecting a devices with its exactly two neighbouring devices.
+
+The following operations takes place in ring topology are :
+1. One station is known as monitor station which takes all the responsibility to perform the operations.
+2. To transmit the data, station has to hold the token. After the transmission is done, the token is to be released for other stations to use.
+3. When no station is transmitting the data, then the token will circulate in the ring.
+4. There are two types of token release techniques : Early token release releases the token just after the transmitting the data and Delay token release releases the token after the acknowledgement is received from the receiver.
+
+# Advantages of this topology :
+The possibility of collision is minimum in this type of topology.
+Cheap to install and expand.
+
+# Problems with this topology :
+Troubleshooting is difficult in this topology.
+Addition of stations in between or removal of stations can disturb the whole topology.
+
+e) Hybrid Topology :
+This topology is a collection of two or more topologies which are described above. This is a scalable topology which can be expanded easily. It is reliable one but at the same it is a costly topology.
+
+# LAN
+# http://www.geeksforgeeks.org/local-area-network-lan-technologies/
+Local Area Network (LAN) is a data communication network connecting various terminals or computers within a building or limited geographical area.The connection among the devices could wired or wireless. Ethernet, Token Ring and Wireless LAN using IEEE 802.11 are examples of standard LAN technologies.
+
+# Ethernet
+Ethernet is most widely used LAN Technology, which is defined under IEEE standards 802.3. The reason behind its wide usability is Ethernet is easy to understand, implement, maintain and allows low cost network implementation. Also, Ethernet offers flexibility in terms of topologies which are allowed. Ethernet operates in two layers of OSI model, Physical Layer and Data Link Layer. For Ethernet the protocol data unit is Frame, since we mainly deal with DLL. In order to handle collision, the Access control mechanism used in Ethernet is CSMA/CD.
+
+# Data Terminal Equipment (DTE):
+Generally, DTEs are the end devices that convert the user information into signals or reconvert the received signals. DTEs devices are : personal computers, workstations, file servers or print servers also referred to as end stations. These devices are either the source or the destination of data frames. The data terminal equipment may be a single piece of equipment or multiple pieces of equipment that are interconnected and perform all the required functions to allow the user to communicate. A user can interacts to DTE or DTE may be user.
+
+# Data Communication Equipment (DCE): 
+DCEs are the intermediate network devices that receive and forward frames across the network. They may be either standalone devices such as repeaters, network switches, routers or may be communications interface units such as interface cards and modems. The DCE performs functions such as signal conversion, coding and may be a part of the DTE or intermediate equipment.
+
+Currently, these data rates are defined for operation over optical fibers and twisted-pair cables:
+i) Fast Ethernet
+Fast Ethernet refers to an Ethernet network that can transfer data at a rate of 100 Mbit/s.
+ii) Gigabit Ethernet
+Gigabit Ethernet delivers a data rate of 1,000 Mbit/s (1 Gbit/s).
+iii) 10 Gigabit Ethernet
+10 Gigabit Ethernet is the recent generation and delivers a data rate of 10 Gbit/s (10,000 Mbit/s). It is generally used for backbones in high-end applications requiring high data rates.
+
+# ALOHA
+The Aloha protocol was designed as part of a project at the University of Hawaii. It provided data transmission between computers on several of the Hawaiian Islands involving packet radio networks. Aloha is a multiple access protocol at the data link layer and proposes how multiple terminals access the medium without interference or collision.
+
+There are two different versions of ALOHA:
+1. Pure Aloha
+ Pure Aloha is an un-slotted, decentralized, and simple to implement protocol. In pure ALOHA, the stations simply transmit frames whenever they want data to send. It does not check whether channel is busy or not before transmitting. In case, two or more stations transmit simultaneously, collision occurs and frames are destroyed.
+2. Slotted Aloha
+This is quite similar to Pure Aloha, differing only in the way transmissions take place. Instead of transmitting right at demand time, the sender waits for some time. In slotted ALOHA, the time of the shared channel is divided into discrete intervals called Slots.
+
+# Stop and Wait ARQ
+# http://www.geeksforgeeks.org/stop-and-wait-arq/
+Characteristics:
+ Used in Connection-oriented communication.
+ It offers error and flow control
+ It is used in Data Link and Transport Layers
+ Stop and Wait ARQ mainly implements Sliding Window Protocol concept with Window Size 1
+
+Useful Terms:
+ Propagation Delay: Amount of time taken by a packet to make a physical journey from one router to another router.
+  Propagation Delay = (Distance between routers) / (Velocity of propagation)
+
+ RoundTripTime (RTT) = 2* Propagation Delay
+ TimeOut (TO) =  2* RTT
+ Time To Live (TTL) = 2* TimeOut. (Maximum TTL is 180 seconds)
+
+# Simple Stop and Wait
+Sender:
+ Rule 1) Send one data packet at a time.
+ Rule 2) Send next packet only after receiving acknowledgement for previous.
+Receiver:
+ Rule 1) Send acknowledgement after receiving and consuming of data packet.
+ Rule 2) After consuming packet acknowledgement need to be sent (Flow Control)
+
+Problems :
+ 1. Lost Data
+ 2. Lost Acknowledgement:
+ 3. Delayed Acknowledgement/Data: After timeout on sender side, a long delayed acknowledgement might be wrongly considered as acknowledgement of some other recent packet.
+
+# Stop and Wait ARQ (Automatic Repeat Request)
+1. Time Out:
+ Retransmission of data after Time Out resolves Lost Data problem;
+2. Sequence Number (Data):
+
+3. Delayed Acknowledgement:
+ This is resolved by introducing sequence number for acknowledgement also.
+
+# Characteristics of Stop and Wait ARQ:
+ It uses link between sender and receiver as half duplex link
+  Throughput = 1 Data packet/frame per  RTT
+ If Bandwidth*Delay product is very high, then stop and wait protocol is not so useful. The sender has to keep waiting for acknowledgements before sending the processed next packet.
+ It is an example for “Closed Loop OR connection oriented “ protocols
+ It is an special category of SWP where its window size is 1
+ Irrespective of number of packets sender is having stop and wait protocol  requires only  2 sequence numbers 0 and 1
+
+# Sliding Window Protocol
+# http://www.geeksforgeeks.org/sliding-window-protocol-set-1/
+The Stop and Wait ARQ offers error and flow control, but may cause big performance issues as sender always waits for acknowledgement even if it has next packet ready to send. Consider a situation where you have a high bandwidth connection and propagation delay is also high (you are connected to some server in some other country though a high speed connection), you can’t use this full speed due to limitations of stop and wait.
+
+# Few Terminologies :
+ Transmission Delay (Tt) – Time to transmit the packet from host to the outgoing link. If B is the Bandwidth of the link and D is the Data Size to transmit
+ Propagation Delay (Tp) – It is the time taken by the first bit transferred by the host onto the outgoing link to reach the destination. It depends on the distance d and the wave propagation speed s (depends on the characteristics of the medium).
+ Efficiency – It is defined as the ratio of total useful time to the total cycle time of a packet. For stop and wait protocol,
+ Effective Bandwidth(EB) or Throughput – Number of bits sent per second.
+ Capacity of link – If a channel is Full Duplex, then bits can be transferred in both the directions and without any collisions. Number of bits a channel/Link can hold at maximum is its capacity.
+
+# Concept Of Pipelining
+
+Minimum Number Of Bits For Sender window (Very Important For GATE)
+
+# Sliding Window Protocol
+# http://www.geeksforgeeks.org/sliding-window-protocol-set-2-receiver-side/
+
+# Error Detection
+# http://www.geeksforgeeks.org/error-detection-computer-networks/
+Error
+A condition when the receiver’s information does not matches with the sender’s information. During transmission, digital signals suffer from noise that can introduce errors in the binary bits travelling from sender to receiver. That means a 0 bit may change to 1 or a 1 bit may change to 0.
+
+1. Simple Parity check 
+2. Two-dimensional Parity check
+3. Checksum
+4. Cyclic redundancy check (CRC)
+
+# Basics of Wi-Fi
+# http://www.geeksforgeeks.org/basics-of-wi-fi/
+Wi-Fi stands for Wireless Fidelity. It is a technology for wireless local area networking with devices based on IEEE 802.11 standards.
+
+The architecture of this standard has 2 kinds of services:
+1. BSS (Basic Service Set)
+2. ESS (Extended Service Set)
+
+BSS is the basic building block of WLAN. It is made of wireless mobile stations and an optional central base station called Access Point.
+Stations can form a network without an AP and can agree to be a part of a BSS.
+A BSS without an AP cannot send data to other BSSs and defines a standalone network. It is called Ad-hoc network or Independent BSS(IBSS).
+A BSS with AP is infrastructure network.
+The figure below depicts an IBSS, BSS with the blue coloured box depicting an AP.
+
+ESS is made up of 2 or more BSSs with APs. BSSs are connected to the distribution system via their APs. Distribution system can be any IEEE LAN such as Ethernet.
+ESS has 2 kinds of stations:
+ 1. Mobile – stations inside the BSS
+ 2. Stationary – AP stations that are part of wired LAN.
+
+# Program to remotely Power On a PC over the internet using the Wake-on-LAN protocol.
+# http://www.geeksforgeeks.org/program-remotely-power-pc-internet-using-wake-lan-protocol/
+Wake-on-LAN (WoL) is an Ethernet or token ring computer networking standard that allows a computer to be turned on or awakened by a network message.
+
+The message is usually sent to the target computer by a program executed on a device connected to the same local area network, such as a smartphone.
+It is also possible to initiate the message from another network by using subnet directed broadcasts or a WOL gateway service.
+Equivalent terms include wake on WAN, remote wake-up, power on by LAN, power up by LAN, resume by LAN, resume on LAN and wake up on LAN.
+
+# Quiz
+# http://www.geeksforgeeks.org/data-link-layer-gq/

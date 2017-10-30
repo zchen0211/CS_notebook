@@ -1,0 +1,25 @@
+# http://www.geeksforgeeks.org/computer-network-circuit-switching-vs-packet-switching/
+
+In circuit switching there are 3 phases
+i) Connection Establishment.
+ii) Data Transfer.
+iii) Connection Released.	
+In Packet switching directly data transfer takes place .
+
+In circuit switching, each data unit know the entire path address which is provided by the source
+In Packet switching, each data unit just know the final destination address intermediate path is decided by the routers.
+
+In Circuit switching, data is processed at source system only
+In Packet switching, data is processed at all intermediate node including source system.
+
+Delay between data units in circuit switching is uniform.
+Delay between data units in packet switching is not uniform.
+
+Resource reservation is the feature of circuit switching because path is fixed for data transmission.
+There is no resource reservation because bandwidth is shared among users.
+
+Circuit switching is more reliable.
+Packet switching is less reliable.
+
+Wastage of resources are more in Circuit Switching
+Less wastage of resources as compared to Circuit Switching
